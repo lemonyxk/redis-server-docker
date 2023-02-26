@@ -106,8 +106,6 @@ func sentinel() {
 
 	defer func() { _ = file.Close() }()
 
-	defer func() { _ = os.Remove(fileName) }()
-
 	go func() {
 		var cmd = Command("redis-sentinel", fileName)
 		pwd, _ := os.Getwd()

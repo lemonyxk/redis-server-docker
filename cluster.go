@@ -93,8 +93,6 @@ func cluster() {
 
 	defer func() { _ = file.Close() }()
 
-	defer func() { _ = os.Remove(fileName) }()
-
 	go func() {
 		var cmd = Command("redis-server", fileName)
 		pwd, _ := os.Getwd()
